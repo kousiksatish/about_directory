@@ -62,8 +62,8 @@ def main():
 	if not is_valid_folder(parser,args.directory):
 		exit(0)
 
-	if args.message:
-		put_description(directory, args.message)
+	if args.description:
+		put_description(directory, args.description)
 		print 'Successfully updated description'
 		exit(0)
 
@@ -86,5 +86,4 @@ def main():
 		y = raw_input()
 		if y=='y':
 			put_description(directory)
-
-main()
+		exit(0)
