@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup (
 	name= "aboutdir",
-	version = "0.1",
+	version = "1.0",
 	description = 'Command line tool for adding description to directories',
 	url = '',
 	author = 'Kousik Satish',
