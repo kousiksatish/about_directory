@@ -47,14 +47,18 @@ def delete_description(directory):
 def main():
 	parser = argparse.ArgumentParser(description='Add description to folders')
 
-	parser.add_argument("directory", help="Enter the directory you wish to add/see description for")
+	parser.add_argument("directory", help="Directory you wish to see description for")
 	group = parser.add_mutually_exclusive_group()
-	group.add_argument('-m', '--message', type=str, help='Adds')
-	group.add_argument('-d', '--delete', action='store_true')
+	group.add_argument('-m', '--description', type=str, help='Add description to the directory')
+	group.add_argument('-d', '--delete', action='store_true', help='Delete description for the directory')
+
+	if len(sys.argv) == 1:
+		parser.print_help()
+		return
+
 	args = parser.parse_args()
 
 	directory = args.directory
-
 	if not is_valid_folder(parser,args.directory):
 		exit(0)
 
@@ -83,3 +87,4 @@ def main():
 		if y=='y':
 			put_description(directory)
 
+main()
