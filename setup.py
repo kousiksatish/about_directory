@@ -11,9 +11,7 @@ setup (
 
     entry_points = {
     	'console_scripts' : ['aboutdir=aboutdir:main']
-    }
-    scripts = ['mains.py'],
-
+    },
     classifiers=[
 	    'Programming Language :: Python :: 2',
 	    'Programming Language :: Python :: 2.6',
