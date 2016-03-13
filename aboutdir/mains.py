@@ -48,9 +48,9 @@ def main():
 	parser = argparse.ArgumentParser(description='Add description to folders')
 
 	parser.add_argument("directory", help="Enter the directory you wish to add/see description for")
-
-	parser.add_argument('-m', '--message', type=str, help='Adds')
-	parser.add_argument('-d', '--delete', action='store_true')
+	group = parser.add_mutually_exclusive_group()
+	group.add_argument('-m', '--message', type=str, help='Adds')
+	group.add_argument('-d', '--delete', action='store_true')
 	args = parser.parse_args()
 
 	directory = args.directory
@@ -83,5 +83,3 @@ def main():
 		if y=='y':
 			put_description(directory)
 
-
-main()
